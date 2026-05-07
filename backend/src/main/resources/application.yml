@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/kiranaconnect
+  
+kiranaconnect:
+  app:
+    jwtSecret: ${JWT_SECRET:KiranaConnectSecureSecretKey2026NewVersion}
+    jwtExpirationMs: 86400000 # 24 hours
+  razorpay:
+    keyId: ${RAZORPAY_KEY_ID}
+    keySecret: ${RAZORPAY_KEY_SECRET}
+  google:
+    search:
+      apiKey: ${GOOGLE_SEARCH_API_KEY}
+      cxId: ${GOOGLE_SEARCH_CX_ID}
+
+server:
+  port: 8080

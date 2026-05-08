@@ -78,10 +78,13 @@ public class ImageSearchController {
 
     private List<String> fetchFromSerpApi(String query) {
         List<String> urls = new ArrayList<>();
+        // Trim key to handle accidental spaces in environment variables
+        String cleanKey = serpApiKey != null ? serpApiKey.trim() : "";
+        
         try {
             String url = String.format(
                 "https://serpapi.com/search.json?engine=google_images&q=%s&api_key=%s",
-                query.replace(" ", "+"), serpApiKey
+                query.replace(" ", "+"), cleanKey
             );
 
             String response = restTemplate.getForObject(url, String.class);

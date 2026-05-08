@@ -16,6 +16,8 @@ kiranaconnect:
     search:
       apiKey: ${GOOGLE_SEARCH_API_KEY:}
       cxId: ${GOOGLE_SEARCH_CX_ID:}
+  serpapi:
+    key: ${SERPAPI_KEY:}
 
 server:
   port: ${PORT:8080}

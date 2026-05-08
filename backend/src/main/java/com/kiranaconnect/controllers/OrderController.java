@@ -39,7 +39,12 @@ public class OrderController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createOrder(@RequestBody Order orderDetails) {
+        System.out.println("--- New Order Creation Request ---");
+        System.out.println("Vendor: " + orderDetails.getShopName() + " | Amount: " + orderDetails.getTotalAmount());
         try {
+            if (razorpayKeyId == null || razorpayKeyId.isEmpty()) {
+                System.err.println("!!! ERROR: Razorpay Key ID is missing!");
+            }
             // 1. Initialize Razorpay Client
             RazorpayClient razorpay = new RazorpayClient(razorpayKeyId, razorpayKeySecret);
 

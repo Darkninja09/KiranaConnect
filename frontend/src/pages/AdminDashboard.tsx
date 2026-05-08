@@ -3,7 +3,6 @@ import AdminService from '../services/admin.service';
 import ProductService from '../services/product.service';
 import { 
   LayoutDashboard, 
-  Package, 
   ShoppingBag, 
   Users, 
   TrendingUp, 
@@ -11,11 +10,8 @@ import {
   Plus,
   Edit,
   Trash2,
-  CheckCircle,
-  Clock,
   Loader2,
   X,
-  ImageIcon,
   ChevronRight,
   Search,
   Check

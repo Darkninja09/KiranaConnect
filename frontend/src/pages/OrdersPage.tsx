@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import OrderService from '../services/order.service';
-import { Package, Clock, CheckCircle2, ChevronRight, ShoppingBag } from 'lucide-react';
+import { Package, CheckCircle2, ShoppingBag } from 'lucide-react';
 
 const OrdersPage: React.FC = () => {
   const { user } = useAuth();

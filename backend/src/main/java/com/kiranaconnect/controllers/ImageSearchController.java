@@ -23,6 +23,14 @@ public class ImageSearchController {
 
     @GetMapping("/search")
     public List<String> searchImages(@RequestParam String query) {
+        // Log key info (masked) for debugging
+        if (serpApiKey != null && serpApiKey.length() > 6) {
+            String maskedKey = serpApiKey.substring(0, 3) + "..." + serpApiKey.substring(serpApiKey.length() - 3);
+            System.out.println("SerpApi search attempt with key: [" + maskedKey + "] (Length: " + serpApiKey.length() + ")");
+        } else {
+            System.out.println("SerpApi key is invalid or too short: " + (serpApiKey == null ? "NULL" : "[" + serpApiKey + "]"));
+        }
+
         // Fallback to Unsplash if no SerpApi Key is provided
         if (serpApiKey == null || serpApiKey.isEmpty() || serpApiKey.equals("YOUR_SERPAPI_KEY")) {
             System.out.println("Using Unsplash fallback: No SerpApi key configured.");
